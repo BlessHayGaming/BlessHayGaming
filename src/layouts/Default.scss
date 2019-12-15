@@ -1,0 +1,9 @@
+.view__fade-enter-active,
+.view__fade-leave-active {
+    transition: opacity .5s;
+}
+
+.view__fade-enter,
+.view__fade-leave-to {
+    opacity: 0;
+}

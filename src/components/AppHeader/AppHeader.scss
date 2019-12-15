@@ -1,0 +1,22 @@
+.app-header {
+    @include grid(padding-top padding-bottom, .5);
+    background-color: $bless-blue;
+    color: $white;
+}
+
+.app-header__logo-wrap {
+    @include grid(width, 4);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    pointer-events: none; // We only want clicks on the actual logo
+
+    @include mobile {
+        @include grid(width, 10);
+    }
+}
+
+.app-header__logo {
+    color: $white;
+}

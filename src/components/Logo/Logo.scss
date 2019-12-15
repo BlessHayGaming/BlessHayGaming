@@ -1,0 +1,28 @@
+.logo__skew-wrap {
+    width: 100%;
+    color: $black;
+    overflow: visible;
+    transition: transform .25s ease-in-out;
+
+    pointer-events: none;
+}
+
+.logo {
+    width: 100%;
+    color: $black;
+    overflow: visible;
+    transform-origin: 50% 50%;
+    transition: transform .5s ease-in-out;
+
+    pointer-events: all;
+
+    .logo__haybale {
+        color: $hay-yellow;
+        transform-origin: 44% 75%;
+        transition: transform .5s ease-in-out;
+    }
+
+    * {
+        fill: currentColor;
+    }
+}

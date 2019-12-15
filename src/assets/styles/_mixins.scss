@@ -1,0 +1,65 @@
+@mixin landscape {
+    @media (orientation: landscape) { @content; }
+}
+@mixin portrait {
+    @media (orientation: portrait) { @content; }
+}
+
+@mixin gt($width) {
+    @media (min-width: $width - 1) { @content; }
+}
+@mixin lt($width) {
+    @media (max-width: $width) { @content; }
+}
+@mixin bt($min, $max) {
+    @media (min-width: $min - 1) and (max-width: $max) { @content; }
+}
+
+@mixin mobile {
+    @media (max-width: $screen-mobile-breakpoint * 1px) { @content; }
+}
+
+@mixin rem($properties, $val: $base-font-size) {
+    @each $property in $properties {
+        #{$property}: $val / $base-font-size * 1rem;
+    }
+}
+
+@mixin grid($properties, $val: 1) {
+    @each $property in $properties {
+        #{$property}: $screen-max-content-width-landscape / $screen-max-landscape-breakpoint * 100vw / $column-count * $val;
+
+        @include gt($screen-max-landscape-breakpoint) {
+            #{$property}: $screen-max-content-width-landscape / $column-count * $val * 1px;
+        }
+        @include portrait {
+            #{$property}: $screen-max-content-width-portrait / $screen-max-portrait-breakpoint * 100vw / $column-count * $val;
+        }
+    }
+}
+@mixin grid-from-px($properties, $val: $screen-max-content-width-landscape / $column-count) {
+    $new-val: $val / ($screen-max-content-width-landscape / $column-count);
+    @include portrait {
+        $new-val: $val / ($screen-max-content-width-portrait / $column-count);
+    }
+    @include grid($properties, strip-unit($new-val));
+}
+
+@mixin side-margin($properties, $val: 1) {
+    @each $property in $properties {
+        #{$property}: ($screen-max-landscape-breakpoint - $screen-max-content-width-landscape) / $screen-max-landscape-breakpoint * 100vw * $val / 2;
+
+        @include gt($screen-max-landscape-breakpoint) {
+            #{$property}: calc((100vw - #{$screen-max-content-width-landscape * $val * 1px}) / 2);
+        }
+        @include portrait {
+            #{$property}: ($screen-max-portrait-breakpoint - $screen-max-content-width-portrait) / $screen-max-portrait-breakpoint * 100vw * $val / 2;
+        }
+    }
+}
+
+@mixin is-content-column {
+    @include grid(width, 12);
+    margin-left: auto;
+    margin-right: auto;
+}

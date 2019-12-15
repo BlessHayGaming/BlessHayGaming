@@ -1,0 +1,25 @@
+$black: #333333;
+$white: #fefefe;
+$bless-blue: #0289ff;
+$bless-blue-bright: #c5e4ff;
+$hay-yellow: #e6c327;
+$programmer-gray: #222222;
+
+$gamemaker-topbar: #048d75;
+$gamemaker-heading: #59b659;
+$gamemaker-link: #ffb871;
+$aseprite-gray: #7e919d;
+$spine-orange: #fb4103;
+
+$base-font-size: 16;
+$min-base-font-size: 10;
+
+$screen-mobile-breakpoint: 768;
+$screen-max-landscape-breakpoint: 1366;
+$screen-max-portrait-breakpoint: 768;
+$screen-max-content-width-landscape: 1080;
+$screen-max-content-width-portrait: 720;
+$column-count: 12;
+
+@import './functions.scss';
+@import './mixins.scss';
