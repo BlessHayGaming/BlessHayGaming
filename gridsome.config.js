@@ -19,8 +19,8 @@ function addStyleResource (rule) {
 module.exports = {
     siteName: 'Bless Hay Gaming',
     siteDescription: 'The home of Bless Hay Gaming.',
-    siteUrl: 'https://blesshaygaming.github.io/',
-    pathPrefix: '/docs',
+    siteUrl: 'https://blesshaygaming.github.io',
+    pathPrefix: '/BlessHayGaming',
     plugins: [
         {
             use: '@gridsome/source-filesystem',
