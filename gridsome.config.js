@@ -20,6 +20,7 @@ module.exports = {
     siteName: 'Bless Hay Gaming',
     siteDescription: 'The home of Bless Hay Gaming.',
     siteUrl: 'https://blesshaygaming.github.io/',
+    pathPrefix: '/docs',
     plugins: [
         {
             use: '@gridsome/source-filesystem',
